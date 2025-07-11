@@ -36,9 +36,11 @@ export const PROJECTS = [
       "A real-time weather application that fetches and displays temperature, humidity, and conditions using OpenWeatherMap API. Deployed with Vercel (frontend) and Render (backend).",
     technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express"],
     link: "https://weather-app-eight-lovat.vercel.app/",
+    target:"_blank"
   },
   {
     title: "To-Do List Web App",
+    target:"_blank",
     image: project2,
     description:
       "A full-stack to-do list application using Node.js and EJS with file-based task storage. Features include add, edit, delete, and view, with a clean TailwindCSS interface.",
@@ -51,10 +53,12 @@ export const PROJECTS = [
     description:
       "My personal portfolio built with React and TailwindCSS. Highlights my projects, skills, and contact info, featuring smooth UI and responsive design.",
     technologies: ["React", "Tailwind CSS", "HTML", "CSS"],
-    link: "#", 
+    link: "#nav", 
+    target:""
   },
   {
     title: "Tic-Tac-Toe Game",
+    target:"_blank",
     image: project4,
     description:
       "A two-player Tic-Tac-Toe game implemented in vanilla JavaScript with win/draw logic and a minimalist interface.",

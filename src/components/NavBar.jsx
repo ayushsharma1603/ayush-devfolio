@@ -5,7 +5,7 @@ import { GrInstagram } from "react-icons/gr";
 
 function NavBar() {
   return (
-    <nav className="flex items-center justify-between py-4">
+    <nav id="nav" className="flex items-center justify-between py-4">
       {/* Logo */}
       <div className="flex flex-shrink-0 items-center ml-4">
         <a href="/" aria-label="Home">
@@ -18,7 +18,7 @@ function NavBar() {
       </div>
 
       {/* Social Links */}
-      <div className="flex mr-4 items-center justify-center gap-4 md:gap-7 text-3xl lg:text-5xl">
+      <div className="magnetic flex mr-4 items-center justify-center gap-4 md:gap-7 text-3xl lg:text-5xl">
         <a
           href="https://www.linkedin.com/in/ayush-sharma1603123/"
           target="_blank"

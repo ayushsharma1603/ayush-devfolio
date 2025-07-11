@@ -50,7 +50,7 @@ function Projects() {
               viewport={{ once: true, amount: 0.2 }}
             >
               <a
-                target="_blank"
+                target={project.target}
                 rel="noopener noreferrer"
                 href={project.link}
               >

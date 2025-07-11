@@ -5,3 +5,31 @@
   font-family: Inter, sans-serif;
   background-color: #000000;
 }
+
+*{
+  scroll-behavior: smooth;
+}
+
+::selection{
+  color: black;
+  background-color: white;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 200px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #212121;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
