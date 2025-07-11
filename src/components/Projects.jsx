@@ -1,11 +1,39 @@
 import { PROJECTS } from "../constants";
+import { motion } from "framer-motion";
+
+// Left (image) animation
+const leftVariant = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+// Right (text) animation
+const rightVariant = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 function Projects() {
   return (
     <div className="pb-24">
-      <h2 className="py-20 text-center text-4xl lg:text-5xl uppercase tracking-wide">
+      {/* Section Title */}
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="py-20 text-center text-4xl lg:text-5xl uppercase tracking-wide"
+      >
         Projects
-      </h2>
+      </motion.h2>
 
       <div className="lg:w-4/5 w-full flex flex-col justify-center mx-auto">
         {PROJECTS.map((project, index) => (
@@ -13,10 +41,18 @@ function Projects() {
             key={index}
             className="flex flex-col lg:flex-row p-4 m-5 gap-20"
           >
-            <div className="lg:w-1/4">
-              <a 
-              target="blank" 
-              href={project.link}
+            {/* Left Image */}
+            <motion.div
+              className="lg:w-1/4"
+              variants={leftVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.link}
               >
                 <img
                   width={250}
@@ -26,12 +62,18 @@ function Projects() {
                   className="border-2 border-stone-800 rounded-3xl"
                 />
               </a>
-              
-            </div>
+            </motion.div>
 
-            <div className="lg:flex lg:flex-col lg:justify-evenly lg:w-3/4">
-              <h1 className="font-bold  text-3xl mb-4">{project.title}</h1>
-              <p className="text-stone-500  font-bold mb-4 w-full">
+            {/* Right Text */}
+            <motion.div
+              className="lg:flex lg:flex-col lg:justify-evenly lg:w-3/4"
+              variants={rightVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <h1 className="font-bold text-3xl mb-4">{project.title}</h1>
+              <p className="text-stone-500 font-bold mb-4 w-full">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">
@@ -44,7 +86,7 @@ function Projects() {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>
