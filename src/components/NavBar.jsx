@@ -18,7 +18,7 @@ function NavBar() {
       </div>
 
       {/* Social Links */}
-      <div className="magnetic flex mr-4 items-center justify-center gap-4 md:gap-7 text-3xl lg:text-5xl">
+      <div className="flex mr-4 items-center justify-center gap-4 md:gap-7 text-3xl lg:text-5xl">
         <a
           href="https://www.linkedin.com/in/ayush-sharma1603123/"
           target="_blank"
