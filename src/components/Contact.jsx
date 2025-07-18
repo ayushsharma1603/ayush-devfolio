@@ -64,7 +64,7 @@ const Contact = () => {
           </p>
         </div>
         <div>
-                  <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto">
+                  <form onSubmit={handleSubmit} autoComplete="off" className="space-y-6 max-w-xl mx-auto">
           <input
             type="text"
             name="name"
