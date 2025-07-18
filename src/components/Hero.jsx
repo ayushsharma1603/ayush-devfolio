@@ -1,4 +1,4 @@
-import bwImage from '../assets/ayush_photo.jpg';
+import bwImage from '../assets/Ayush_photo.jpg';
 import cImage from "../assets/Color_photo.jpg"
 import { HERO_CONTENT } from '../constants';
 import { motion } from 'framer-motion';
