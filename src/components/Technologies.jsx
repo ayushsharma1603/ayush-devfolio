@@ -7,22 +7,32 @@ import { FaJava } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { motion } from "framer-motion";
 
-// Helper to get random duration between min and max
-// const getRandomDuration = (min = 1.5, max = 3) =>
-//   Math.random() * (max - min) + min;
+// 👇 Helper to generate random float values
+const getRandomFloat = (min, max) => Math.random() * (max - min) + min;
 
-const iconVariants = (duration) => ({
-  initial: { y: 0 },
-  animate: {
-    y: [15, -10],
+const floatVariants = {
+  initial: { x: 0, y: 0 },
+  animate: () => ({
+    x: [0, getRandomFloat(-15, 15), 0],
+    y: [0, getRandomFloat(-15, 15), 0],
     transition: {
-      duration,
-      ease: "linear",
+      duration: getRandomFloat(2, 4),
       repeat: Infinity,
-      repeatType: "reverse",
+      repeatType: "loop",
+      ease: "easeInOut",
     },
-  },
-});
+  }),
+};
+
+const icons = [
+  { Icon: BiLogoMongodb, color: "#02ed60", glow: "rgba(2, 237, 96, 0.4)" },
+  { Icon: SiExpress, color: "#d1d5db", glow: "rgba(255, 255, 255, 0.2)" },
+  { Icon: RiReactjsFill, color: "#22d3ee", glow: "rgba(0, 255, 255, 0.3)" },
+  { Icon: TbBrandNodejs, color: "#75b940", glow: "rgba(117, 185, 64, 0.4)" },
+  { Icon: GrMysql, color: "#05586a", glow: "rgba(5, 88, 106, 0.4)" },
+  { Icon: IoLogoJavascript, color: "#f7e018", glow: "rgba(247, 224, 24, 0.4)" },
+  { Icon: FaJava, color: "#e76f00", glow: "rgba(231, 111, 0, 0.4)" },
+];
 
 const Technologies = () => {
   return (
@@ -32,12 +42,11 @@ const Technologies = () => {
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="py-20 text-center text-4xl lg:text-5xl uppercase tracking-wide"
+        className="lg:py-20 text-4xl font-bold mt-20 lg:mt-0 mb-8 text-center lg:text-5xl uppercase tracking-wide"
       >
         Technologies
-        
       </motion.h2>
-  
+
       <motion.div
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -20 }}
@@ -45,96 +54,22 @@ const Technologies = () => {
         viewport={{ once: true }}
         className="flex flex-wrap justify-center items-center gap-10"
       >
-        <motion.div
-          whileHover=
-          {
-            {transition:
-            {
-              duration:0.5
-            }, 
-            scale: 1.1,
-            boxShadow: "0px 0px 20px rgba(2, 237, 96, 0.4)"
-            }
-          }
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(1.2)}
-          className="p-4 lg:p-10"
-        >
-          <BiLogoMongodb className=" text-8xl text-[#02ed60]" />
-        </motion.div>
-
-        <motion.div
-          whileHover={{transition:{
-            duration:0.5
-          },boxShadow:"0 0 20px rgba(255, 255, 255, 0.2)", scale: 1.1 }}
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(2)}
-          className="p-4 lg:p-10"
-        >
-          <SiExpress className="text-8xl text-gray-300" />
-        </motion.div>
-
-        <motion.div
-          whileHover={{transition:{
-            duration:0.5
-          },boxShadow:"0 0 20px rgba(0, 255, 255, 0.3)", scale: 1.1 }}
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(1)}
-          className="p-4 lg:p-10"
-        >
-          <RiReactjsFill className="text-8xl text-cyan-400" />
-        </motion.div>
-
-        <motion.div
-          whileHover={{transition:{
-            duration:0.5
-          },boxShadow:"0 0 20px rgba(117, 185, 64, 0.4)", scale: 1.1 }}
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(2.4)}
-          className="p-4 lg:p-10"
-        >
-          <TbBrandNodejs className="text-8xl text-[#75b940]" />
-        </motion.div>
-
-        <motion.div
-          whileHover={{transition:{
-            duration:0.5
-          },boxShadow:"0 0 20px rgba(5, 88, 106, 0.4)", scale: 1.1 }}
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(3)}
-          className="p-4 lg:p-10"
-        >
-          <GrMysql className="text-8xl text-[#05586a]" />
-        </motion.div>
-
-        <motion.div
-          whileHover={{transition:{
-            duration:0.5
-          },boxShadow:"0 0 20px rgba(247, 224, 24, 0.4)", scale: 1.1 }}
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(1.6)}
-          className="p-4 lg:p-10"
-        >
-          <IoLogoJavascript className="text-8xl text-[#f7e018]" />
-        </motion.div>
-
-        <motion.div
-          whileHover={{transition:{
-            duration:0.5
-          },boxShadow:"0 0 20px rgba(231, 111, 0, 0.4)", scale: 1.1 }}
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(3)}
-          className="p-4 lg:p-10"
-        >
-          <FaJava className="text-8xl text-[#e76f00]" />
-        </motion.div>
+        {icons.map(({ Icon, color, glow }, idx) => (
+          <motion.div
+            key={idx}
+            variants={floatVariants}
+            initial="initial"
+            animate="animate"
+            whileHover={{
+              scale: 1.1,
+              boxShadow: `0 0 20px ${glow}`,
+              transition: { duration: 0.4 },
+            }}
+            className=" lg:p-10"
+          >
+            <Icon className="text-8xl" style={{ color }} />
+          </motion.div>
+        ))}
       </motion.div>
     </div>
   );

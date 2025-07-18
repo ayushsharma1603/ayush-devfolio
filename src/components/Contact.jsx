@@ -1,143 +1,108 @@
-import { useRef, useState } from "react";
-import { CONTACT } from "../constants";
-import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { useState } from "react";
 
-const formVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
-    },
-  },
-};
 
-const inputVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
 
 const Contact = () => {
-  const formRef = useRef();
-  const [emailError, setEmailError] = useState("");
+  //submit handler
 
-  const validateEmail = (email) => {
-    return /\S+@\S+\.\S+/.test(email);
-  };
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const email = formRef.current.from_email.value;
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const message = form.message.value;
 
-    if (!validateEmail(email)) {
-      setEmailError("Please enter a valid email address.");
+    if (!name || !email || !message) {
+      alert("All fields are required!");
       return;
     }
 
-    setEmailError("");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Invalid email format!");
+      return;
+    }
 
-    emailjs
-      .sendForm(
+    setLoading(true);
+
+    try {
+      await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          alert("Message sent successfully!");
-          formRef.current.reset();
+        {
+          from_name: name,
+          from_email: email,
+          message: message,
         },
-        (error) => {
-          console.error(error);
-          alert("Failed to send message. Please try again later.");
-        }
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
+
+      alert("Message Sent Successfully ✅");
+      form.reset();
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      alert("Failed to send the message. Please try again ❌");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="m-10 lg:mt-20 lg:pt-20 md:m-20 border-t border-stone-900 pb-20 flex flex-col lg:flex-row lg:items-center gap-10">
-      <div className="w-full lg:w-1/2 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-4xl my-10"
-        >
-          Get In Touch
-        </motion.h1>
+      <div className="min-h-screen px-6 relative  lg:h-screen flex flex-col justify-between">
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="tracking-tight"
-        >
-          <p className="my-4 text-stone-400">{CONTACT.phoneNo}</p>
-          <a
-            href={`mailto:${CONTACT.email}`}
-            className="border-b text-stone-300 hover:text-white"
-          >
-            {CONTACT.email}
-          </a>
-        </motion.div>
-      </div>
-
-      <div className="w-full lg:w-1/2">
-        <motion.form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className="mt-4 max-w-xl mx-auto px-4 flex flex-col gap-6"
-          initial="hidden"
-          whileInView="visible"
-          variants={formVariants}
-          viewport={{ once: true }}
-        >
-          <motion.input
+      
+      <div className="max-w-4xl mx-auto my-9 text-center ">
+        <div>
+          <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-stone-300 to-stone-700 bg-clip-text text-transparent mb-6">
+          Let's Connect
+          </h1>
+          <p className="text-lg text-gray-400 mb-12">
+            Whether it's a question, a collaboration idea, or just a friendly hello — I'm all ears. Drop your message below and let's start a conversation!
+          </p>
+        </div>
+        <div>
+                  <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto">
+          <input
             type="text"
-            name="from_name"
+            name="name"
             placeholder="Your Name"
-            className="bg-stone-900 border border-stone-700 rounded px-4 py-3 text-white focus:outline-none focus:border-stone-500"
-            variants={inputVariants}
-            required
+            className="w-full px-5 py-3 rounded-lg bg-neutral-900 text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-stone-500"
           />
-          <motion.input
-            type="email"
-            name="from_email"
+          <input
+            type="text"
+            name="email"
             placeholder="Your Email"
-            className="bg-stone-900 border border-stone-700 rounded px-4 py-3 text-white focus:outline-none focus:border-stone-500"
-            variants={inputVariants}
-            required
+            className="w-full px-5 py-3 rounded-lg bg-neutral-900 text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-stone-500"
           />
-          {emailError && (
-            <span className="text-red-500 text-sm -mt-4">{emailError}</span>
-          )}
-          <motion.textarea
+          <textarea
+            rows="5"
             name="message"
-            rows={5}
             placeholder="Your Message"
-            className="bg-stone-900 border border-stone-700 rounded px-4 py-3 text-white focus:outline-none focus:border-stone-500 resize-none"
-            variants={inputVariants}
-            required
-          ></motion.textarea>
-          <motion.button
+            className="w-full px-5 py-3 rounded-lg bg-neutral-900 text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-stone-500"
+          ></textarea>
+          <button
             type="submit"
-            className="bg-stone-300 text-stone-900 font-semibold rounded px-6 py-3 hover:bg-white transition duration-300"
-            variants={inputVariants}
+            className="bg-gradient-to-r from-stone-300 to-stone-700 text-black font-semibold py-3 px-8 rounded-md hover:from-stone-700 hover:to-stone-600 transition"
+            
           >
-            Send Message
-          </motion.button>
-        </motion.form>
+            {loading ? "Sending..." : "Send Message"}
+          </button>
+        </form>
+        </div>
       </div>
-    </div>
-  );
-};
 
-export default Contact;
+      <footer className="bg-neutral-950 text-gray-400 px-6 mt-5 border-t border-neutral-800">
+        <div className="flex justify-center items-center">
+          <p className="text-sm text-center">
+            &copy; {new Date().getFullYear()} Ayush Sharma. Crafted with ❤️
+          </p>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+export default Contact

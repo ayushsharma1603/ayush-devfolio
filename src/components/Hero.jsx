@@ -1,4 +1,5 @@
 import bwImage from '../assets/ayush_photo.jpg';
+import cImage from "../assets/Color_photo.jpg"
 import { HERO_CONTENT } from '../constants';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
@@ -55,6 +56,21 @@ const Hero = () => {
   const isDeleting = useRef(false);
   const typingTimeout = useRef(null);
 
+  const colors = ["404040", "222831","000000"];
+  const [borderColor, setBorderColor] = useState(colors[0]);
+
+    useEffect(() => {
+    const interval = setInterval(() => {
+      setBorderColor((prev) => {
+        const currentIndex = colors.indexOf(prev);
+        const nextIndex = (currentIndex + 1) % colors.length;
+        return colors[nextIndex];
+      });
+    }, 1200);
+
+    return () => clearInterval(interval); // Clean up on unmount
+  }, []);
+
   const typeEffect = () => {
     const currentRole = devRoles[roleIndex.current];
     let updatedText;
@@ -96,18 +112,30 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className='pb-4 lg:mb-36'>
+    <div className='p-4 lg:mb-36 mt-30 lg:mt-20'>
       <div className='flex flex-wrap lg:flex-row-reverse'>
         <div className='w-full lg:w-1/2'>
-          <div className='flex justify-center lg:p-8'>
+          <div className='flex relative justify-center items-center rounded-full lg:p-5'>
             <motion.img
               src={bwImage}
               alt='Ayush Sharma'
-              className='border-2 border-stone-900 rounded-3xl'
+              className={`border-4 lg:w-10/12 transition-colors duration-1200 rounded-full`}
               initial={{ x: 100, opacity: 0, scale: 0.9 }}
               animate={{ x: 0, opacity: 1, scale: 1 }}
               transition={{ type: 'spring', stiffness: 80, delay: 1 }}
+              style={{ borderColor: `#${borderColor}` }}
             />
+             <motion.div
+  className="absolute lg:right-30 lg:top-10 right-7 top-4 md:right-20 md:top-20 w-7 h-7 rounded-full shadow-md bg-gradient-to-b from-stone-300 via-stone-500 to-stone-700"
+  animate={{ y: [0,-17, -20, -17, 0] }}
+  transition={{
+    times: [1,0.7, 0.3, 0],
+    repeat: Infinity,
+    duration: 2,
+    ease: "easeInOut",
+  }}
+/>
+
           </div>
         </div>
         <div className='w-full lg:w-1/2'>

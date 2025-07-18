@@ -51,9 +51,9 @@ export const PROJECTS = [
     title: "React Portfolio Website",
     image: project3,
     description:
-      "My personal portfolio built with React and TailwindCSS. Highlights my projects, skills, and contact info, featuring smooth UI and responsive design.",
+      "My personal portfolio built with React, TailwindCSS, and Framer Motion, showcasing my projects, skills, and contact details. It features a responsive layout, smooth animations, custom cursor effects, and an integrated EmailJS-powered contact form. Designed with performance, interactivity, and clean UI in mind.",
     technologies: ["React", "Tailwind CSS", "HTML", "CSS"],
-    link: "#nav", 
+    link: "", 
     target:""
   },
   {
@@ -69,7 +69,6 @@ export const PROJECTS = [
 
 
 export const CONTACT = {
-  phoneNo: "+91 9389271705",
   email: "ayushsharmapro18@gmail.com",
 };
 

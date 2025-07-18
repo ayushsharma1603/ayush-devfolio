@@ -30,7 +30,7 @@ function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="py-20 text-center text-4xl lg:text-5xl uppercase tracking-wide"
+        className="py-20 text-cente font-bold mb-8 text-center text-4xl lg:text-5xl uppercase tracking-wide"
       >
         Projects
       </motion.h2>
