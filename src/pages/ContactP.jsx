@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 import Contact from "../components/Contact";
 import CursorFollower from "../components/Cursor";
 import logo from "../assets/logo.png";
@@ -15,33 +15,35 @@ const ContactP = () => {
         </div>
       </div>
 
-      {/* Main Container */}
       <div className="container mx-auto lg:px-20 px-7 text-center">
         <CursorFollower />
 
         {/* Header */}
-        <div className="w-full h-auto py-6 flex flex-col md:flex-row justify-between items-center text-stone-400 gap-6">
-          {/* Logo */}
-          <div className="flex md:w-auto w-full justify-between items-center">
-            <Link to={"/"}>
-            <img
-              className="rounded-full p-2 transition-all duration-600 h-20 md:h-24"
-              src={logo}
-              alt="Logo"
-            />
-          </Link>
-            <Link to={"/"}>
-            <button className="px-6 inline-block md:hidden py-2 text-lg transition-all duration-500 hover:scale-105 hover:text-black hover:bg-stone-200 bg-gradient-to-r from-stone-400 via-stone-600 to-black hover:from-black hover:via-stone-600 hover:to-stone-400 rounded border border-stone-500">
-              Home
-            </button>
-          </Link>
+        <motion.div
+          className="w-full h-auto py-6 flex flex-col md:flex-row justify-between items-center text-stone-400 gap-6"
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          {/* Logo + Home Button (Mobile) */}
+          <div className="flex w-full md:w-auto justify-between items-center">
+            <Link to="/">
+              <img
+                className="rounded-full p-2 transition-all duration-600 h-20 md:h-24"
+                src={logo}
+                alt="Logo"
+              />
+            </Link>
+
+            <Link to="/">
+              <button className="md:hidden px-6 py-2 text-lg transition-all duration-500 hover:scale-105 hover:text-black hover:bg-stone-200 bg-gradient-to-r from-stone-400 via-stone-600 to-black hover:from-black hover:via-stone-600 hover:to-stone-400 rounded border border-stone-500">
+                Home
+              </button>
+            </Link>
           </div>
-          
 
           {/* Contact Info */}
           <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm text-gray-300">
-
-            {/* Email */}
             <div className="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,16 +64,22 @@ const ContactP = () => {
             </div>
           </div>
 
-          {/* Home Button */}
-          <Link to={"/"}>
-            <button className="px-6 hidden md:inline-block py-2 text-lg transition-all duration-500 hover:scale-105 hover:text-black hover:bg-stone-200 bg-gradient-to-r from-stone-400 via-stone-600 to-black hover:from-black hover:via-stone-600 hover:to-stone-400 rounded border border-stone-500">
+          {/* Home Button (Desktop) */}
+          <Link to="/">
+            <button className="hidden md:inline-block px-6 py-2 text-lg transition-all duration-500 hover:scale-105 hover:text-black hover:bg-stone-200 bg-gradient-to-r from-stone-400 via-stone-600 to-black hover:from-black hover:via-stone-600 hover:to-stone-400 rounded border border-stone-500">
               Home
             </button>
           </Link>
-        </div>
+        </motion.div>
 
         {/* Contact Form */}
-        <Contact key={Date.now()} />
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+        >
+          <Contact key={Date.now()} />
+        </motion.div>
       </div>
     </div>
   );

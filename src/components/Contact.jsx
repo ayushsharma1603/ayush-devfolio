@@ -1,5 +1,20 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import { motion } from "framer-motion";
+
+// Animation variants
+const formVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+};
 
 
 
@@ -64,33 +79,52 @@ const Contact = () => {
           </p>
         </div>
         <div>
-                  <form onSubmit={handleSubmit} autoComplete="off" className="space-y-6 max-w-xl mx-auto">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            className="w-full px-5 py-3 rounded-lg bg-neutral-900 text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-stone-500"
-          />
-          <input
-            type="text"
-            name="email"
-            placeholder="Your Email"
-            className="w-full px-5 py-3 rounded-lg bg-neutral-900 text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-stone-500"
-          />
-          <textarea
-            rows="5"
-            name="message"
-            placeholder="Your Message"
-            className="w-full px-5 py-3 rounded-lg bg-neutral-900 text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-stone-500"
-          ></textarea>
-          <button
-            type="submit"
-            className="bg-gradient-to-r from-stone-300 to-stone-700 text-black font-semibold py-3 px-8 rounded-md hover:from-stone-700 hover:to-stone-600 transition"
-            
-          >
-            {loading ? "Sending..." : "Send Message"}
-          </button>
-        </form>
+          <form onSubmit={handleSubmit} autoComplete="off" className="space-y-6 max-w-xl mx-auto">
+  {[{ name: "name", type: "text", placeholder: "Your Name" },
+    { name: "email", type: "text", placeholder: "Your Email" },
+    { name: "message", type: "textarea", placeholder: "Your Message" }
+  ].map((field, index) => (
+    <motion.div
+      key={field.name}
+      custom={index}
+      initial="hidden"
+      animate="visible"
+      variants={formVariants}
+    >
+      {field.type === "textarea" ? (
+        <textarea
+          rows="5"
+          name={field.name}
+          placeholder={field.placeholder}
+          className="w-full px-5 py-3 rounded-lg bg-neutral-900 text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-stone-500"
+        />
+      ) : (
+        <input
+          type={field.type}
+          name={field.name}
+          placeholder={field.placeholder}
+          className="w-full px-5 py-3 rounded-lg bg-neutral-900 text-white border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-stone-500"
+        />
+      )}
+    </motion.div>
+  ))}
+
+  <motion.div
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ delay: 0.45, duration: 0.4 }}
+  >
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      type="submit"
+      className="bg-gradient-to-r from-stone-300 to-stone-700 text-black font-semibold py-3 px-8 rounded-md hover:from-stone-700 hover:to-stone-600 transition"
+    >
+      {loading ? "Sending..." : "Send Message"}
+    </motion.button>
+  </motion.div>
+</form>
+
         </div>
       </div>
 
