@@ -13,8 +13,8 @@ function CursorFollower() {
     window.addEventListener("mousemove", handleMouseMove);
 
     const animate = () => {
-      followerPos.current.x += (mousePos.current.x - followerPos.current.x) * 0.15;
-      followerPos.current.y += (mousePos.current.y - followerPos.current.y) * 0.15;
+      followerPos.current.x += (mousePos.current.x - followerPos.current.x) * 1;
+      followerPos.current.y += (mousePos.current.y - followerPos.current.y) * 1;
 
       if (followerRef.current) {
         followerRef.current.style.transform = `translate(${followerPos.current.x - 20}px, ${followerPos.current.y - 20}px)`;
