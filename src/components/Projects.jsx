@@ -1,5 +1,5 @@
 import { PROJECTS } from "../constants";
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 
 // Left (image) animation
 const leftVariant = {
@@ -19,6 +19,20 @@ const rightVariant = {
     x: 0,
     transition: { duration: 0.6, ease: "easeOut" },
   },
+};
+
+const mouseEnter = (e) => {
+  const target = e.target;
+  target.style.color = "black"; // Change text color on mouse enter
+  target.style.textShadow= "0px 0px 10px #ffffff"
+  target.style.transition= "all 0.4s ease-in-out"; 
+};
+
+const mouseLeave = (e) => {
+  const target = e.target;
+  target.style.color = ""; // Reset text color on mouse leave
+  target.style.textShadow= "none"
+  target.style.textDecoration = "none"; // Remove underline on mouse leave
 };
 
 function Projects() {
@@ -59,7 +73,7 @@ function Projects() {
                   height={250}
                   src={project.image}
                   alt="project_image"
-                  className="border-2 border-stone-800 rounded-3xl"
+                  className="border-2 hover:scale-110 transition-transform duration-600 border-stone-800 rounded-3xl"
                 />
               </a>
             </motion.div>
@@ -72,7 +86,14 @@ function Projects() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h1 className="font-bold text-3xl mb-4">{project.title}</h1>
+               <a
+                target={project.target}
+                rel="noopener noreferrer"
+                href={project.link}
+              >
+                <h1 className="font-bold field-sizing-content transition text-3xl mb-4" onMouseLeave={mouseLeave} onMouseEnter={mouseEnter}>{project.title}</h1>
+              </a>
+              
               <p className="text-stone-500 font-bold mb-4 w-full">
                 {project.description}
               </p>

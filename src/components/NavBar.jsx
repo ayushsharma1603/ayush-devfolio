@@ -35,7 +35,7 @@ console.log(position);
         <Link to={"/"} >
         <img
             className={`rounded-full p-2 transition-all duration-600 ${
-              scrolled ? "h-16 md:h-20" : "h-20 md:h-24"
+              scrolled ? "h-16 w-16 md:w-20 md:h-20" : "h-20 w-20 md:w-24 md:h-24"
             }`}
             src={logo}
             alt="Logo"
@@ -70,7 +70,7 @@ console.log(position);
           <SiLeetcode className="transform transition-all hover:text-stone-600 duration-700 hover:scale-125 cursor-pointer" />
         </a>
         <a
-          href="https://www.instagram.com/yoosh_sharma"
+          href="https://www.instagram.com/i.yoosh.sharma/"
           target="_blank"
           aria-label="Instagram"
           rel="noopener noreferrer"

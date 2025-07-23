@@ -48,7 +48,7 @@ function Experience() {
 
       <div className="flex flex-col gap-20 items-center w-full">
         {EXPERIENCES.map((exp, idx) => (
-          <div key={idx} className="flex lg:flex-row flex-col w-full lg:justify-center gap-10 px-6">
+          <div key={idx} className="flex  lg:flex-row flex-col w-full lg:justify-center gap-10 px-6">
             {/* Left Column */}
             <motion.div
               className="lg:w-1/2 flex justify-center"
@@ -57,7 +57,7 @@ function Experience() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <p className="text-stone-600 font-bold text-lg">{exp.year}</p>
+              <p className="text-stone-600 text-shadow-amber-50 text-shadow-2xs font-bold text-2xl">{exp.year}</p>
             </motion.div>
 
             {/* Right Column (Staggered) */}

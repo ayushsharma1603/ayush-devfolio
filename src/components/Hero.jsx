@@ -1,8 +1,19 @@
 import bwImage from '../assets/Ayush_photo.jpg';
-import cImage from "../assets/Color_photo.jpg"
 import { HERO_CONTENT } from '../constants';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+
+const imageMouseEnter = (e)=>{
+  const target=e.target;
+  target.style.scale = "1.05";
+  target.style.transition = "scale 0.5s ease-in-out"; // Smooth transition for scale
+}
+
+const imageMouseLeave = (e)=> {
+  const target=e.target;
+  target.style.scale = "1"; // Reset scale on mouse leave
+  
+}
 
 const containerVarints = {
   hidden: { opacity: 0, x: -100 },
@@ -118,12 +129,20 @@ const Hero = () => {
           <div className='flex relative justify-center items-center rounded-full lg:p-5'>
             <motion.img
               src={bwImage}
-              alt='Ayush Sharma'
-              className={`border-4 lg:w-10/12 transition-colors duration-1200 rounded-full`}
+              alt="Ayush Sharma"
+              className="lg:w-10/12 rounded-full transition-shadow duration-500"
               initial={{ x: 100, opacity: 0, scale: 0.9 }}
               animate={{ x: 0, opacity: 1, scale: 1 }}
-              transition={{ type: 'spring', stiffness: 80, delay: 1 }}
-              style={{ borderColor: `#${borderColor}` }}
+              whileHover={{ scale: 1.05, boxShadow: `0px 0px 40px 20px #${borderColor}` }}
+              transition={{
+                type: 'tween',
+                ease: 'easeInOut',
+                duration: 0.5,
+              }}
+              style={{
+                boxShadow: `0px 0px 20px 10px #${borderColor}`,
+                transition: 'box-shadow 0.3s ease-in-out',
+              }}
             />
              <motion.div
   className="absolute lg:right-30 lg:top-10 right-7 top-4 md:right-20 md:top-20 w-7 h-7 rounded-full shadow-md bg-gradient-to-b from-stone-300 via-stone-500 to-stone-700"
@@ -147,7 +166,7 @@ const Hero = () => {
           >
             <motion.h2
               variants={childVariants}
-              className='text-4xl pb-2 tracking-tight lg:text-7xl'
+              className='text-4xl leading-tight pb-2 tracking-tight lg:text-7xl'
             >
               Ayush Sharma
             </motion.h2>
