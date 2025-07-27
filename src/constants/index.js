@@ -12,20 +12,28 @@ I enjoy turning ideas into functional and responsive web applications, and I'm a
 
 export const EXPERIENCES = [
   {
-    year: "Jan 2024 – Present",
-    role: "Full Stack Developer (Project-Based)",
+    year: "Jul 2025 – Present",
+    role: "Full Stack Developer | Real-Time Systems",
     company: "Independent",
-    description: `Built full-stack applications including a weather app using Express and OpenWeatherMap API, and a file-based to-do list app using Node.js and EJS. Focused on clean code practices, modular structure, and RESTful design while handling frontend and backend independently.`,
+    description: `Built a production-ready MERN app for real-time chat and video calling using Stream SDK. Designed scalable friend system, integrated JWT auth, REST APIs, and deployed on Render. Emphasized real-time communication, auth flows, and SDK integration.`,
+    technologies: ["React", "Node.js", "Express", "MongoDB", "JWT", "Stream SDK", "Vite"],
+  },
+  {
+    year: "Jan 2024 – Jun 2025",
+    role: "Full Stack Developer | API & Server-Side Rendering",
+    company: "Independent",
+    description: `Developed modular apps like a weather dashboard (OpenWeatherMap API) and a file-based to-do app using EJS templates. Focused on server-side rendering, RESTful APIs, and file handling without databases.`,
     technologies: ["Node.js", "Express", "EJS", "Tailwind CSS"],
   },
   {
-    year: "July 2025 - Aug 2025",
-    role: "Frontend Developer (Portfolio Project)",
+    year: "Jul 2025 – Aug 2025",
+    role: "Frontend Developer | UI/UX & Branding",
     company: "Self-Initiated",
-    description: `Designed and developed a responsive personal portfolio website to showcase projects and skills. Integrated smooth animations and clean layout using Tailwind CSS and Framer Motion. Deployed the site using Vercel.`,
-    technologies: ["React", "Tailwind CSS", "Framer Motion", "HTML", "CSS"],
-  }
+    description: `Designed a personal portfolio with responsive layouts, Framer Motion animations, and SEO-friendly structure using Vite and Tailwind CSS. Focused on frontend performance and smooth user experience.`,
+    technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+  },
 ];
+
 
 
 export const PROJECTS = [
