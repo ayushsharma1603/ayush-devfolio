@@ -56,9 +56,9 @@ const Technologies = () => {
         className="flex flex-wrap justify-center items-center gap-10"
       >
         {icons.map(({ Icon, color, glow,site }, idx) => (
-          <a href={site} target="_blank">
+          <a key={idx} href={site} target="_blank">
                       <motion.div
-            key={idx}
+            
             variants={floatVariants}
             initial="initial"
             animate="animate"

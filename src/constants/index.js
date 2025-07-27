@@ -30,42 +30,61 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "Weather App",
-    image: project1,
+    title: "NexCall",
+    image: project3, // You can replace this with a NexCall-specific image
     description:
-      "A real-time weather application that fetches and displays temperature, humidity, and conditions using OpenWeatherMap API. Deployed with Vercel (frontend) and Render (backend).",
-    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express"],
-    link: "https://weather-app-eight-lovat.vercel.app/",
-    target:"_blank"
-  },
-  {
-    title: "To-Do List Web App",
-    target:"_blank",
-    image: project2,
-    description:
-      "A full-stack to-do list application using Node.js and EJS with file-based task storage. Features include add, edit, delete, and view, with a clean TailwindCSS interface.",
-    technologies: ["Node.js", "Express", "EJS", "Tailwind CSS"],
-    link: "https://github.com/ayushsharma1603/To-Do-list", 
+      "NexCall is a full-stack chat and video calling application built with React and Node.js. It allows users to connect via friend requests, real-time messaging, and secure video calls using the Stream SDK. Features include JWT-based authentication, MongoDB integration, and a responsive UI built with TailwindCSS.",
+    technologies: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT"
+    ],
+    link: "https://nexcall-video-calling.onrender.com/",
+    target: "_blank"
   },
   {
     title: "React Portfolio Website",
-    image: project3,
+    image: project2,
     description:
       "My personal portfolio built with React, TailwindCSS, and Framer Motion, showcasing my projects, skills, and contact details. It features a responsive layout, smooth animations, custom cursor effects, and an integrated EmailJS-powered contact form. Designed with performance, interactivity, and clean UI in mind.",
     technologies: ["React", "Tailwind CSS", "HTML", "CSS"],
-    link: "", 
-    target:""
+    link: "https://ayush-devfolio.vercel.app/",
+    target: "_blank"
   },
   {
+    title: "Weather App",
+    image: project3,
+    description:
+      "A real-time weather application that fetches and displays temperature, humidity, and conditions using OpenWeatherMap API. Deployed with Vercel and Render",
+    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express"],
+    link: "https://weather-app-eight-lovat.vercel.app/",
+    target: "_blank"
+  },
+  {
+    title: "To-Do List Web App",
+    image: project1,
+    description:
+      "A full-stack to-do list application using Node.js and EJS with file-based task storage. Features include add, edit, delete, and view, with a clean TailwindCSS interface.",
+    technologies: ["Node.js", "Express", "EJS", "Tailwind CSS"],
+    link: "https://github.com/ayushsharma1603/To-Do-list",
+    target: "_blank"
+  },
+
+  {
     title: "Tic-Tac-Toe Game",
-    target:"_blank",
     image: project4,
     description:
-      "A two-player Tic-Tac-Toe game implemented in vanilla JavaScript with win/draw logic and a minimalist interface.",
+      "A minimalist two-player Tic-Tac-Toe game developed using vanilla JavaScript, featuring robust win and draw logic. Built as a frontend-focused hobby project to practice core JS concepts.",
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://ayushsharma1603.github.io/Tic-Tac-Toe/",
-  },
+    target: "_blank"
+  }
 ];
+
 
 
 export const CONTACT = {
