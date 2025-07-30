@@ -1,10 +1,11 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-import { GrInstagram } from "react-icons/gr";
+import { GrInstagram, GrX } from "react-icons/gr";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import { RiTwitterXFill } from "react-icons/ri";
 
 function NavBar({position}) {
   const [scrolled, setScrolled] = useState(false);
@@ -76,6 +77,14 @@ console.log(position);
           rel="noopener noreferrer"
         >
           <GrInstagram className="hover:text-[#ee2a7b] transition-all duration-700 hover:scale-125 cursor-pointer" />
+        </a>
+                <a
+          href="https://x.com/i_yoosh_sharma"
+          target="_blank"
+          aria-label="X (formerly Twitter)"
+          rel="noopener noreferrer"
+        >
+          <RiTwitterXFill className="hover:text-black hover:bg-white transition-all duration-700 hover:scale-125 cursor-pointer" />
         </a>
       </div>
     </motion.nav>

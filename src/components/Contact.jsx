@@ -1,6 +1,10 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import { GrInstagram } from "react-icons/gr";
+import { RiTwitterXFill } from "react-icons/ri";
 
 // Animation variants
 const formVariants = {
@@ -66,14 +70,56 @@ const Contact = () => {
   };
 
   return (
-      <div className="min-h-screen px-6 relative  lg:h-screen flex flex-col justify-between">
+      <div className="min-h-screen px-6 relativ lg:h-screen flex flex-col justify-between">
 
       
-      <div className="max-w-4xl mx-auto my-9 text-center ">
+      <div className="max-w-4xl mx-auto my-1 text-center ">
         <div>
-          <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-stone-300 to-stone-700 bg-clip-text text-transparent mb-6">
+          <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-stone-300 to-stone-700 bg-clip-text text-transparent">
           Let's Connect
           </h1>
+          <div className="flex my-10 items-center justify-center gap-4 md:gap-15 text-3xl lg:text-5xl">
+            <a
+              href="https://www.linkedin.com/in/ayush-sharma1603123/"
+              target="_blank"
+              aria-label="LinkedIn"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin className="transform transition-all hover:text-[#095c86] duration-700 hover:scale-125 cursor-pointer" />
+            </a>
+            <a
+              href="https://github.com/ayushsharma1603"
+              target="_blank"
+              aria-label="GitHub"
+              rel="noopener noreferrer"
+            >
+              <FaGithub className="transform transition-all hover:text-stone-600 duration-700 hover:scale-125 cursor-pointer" />
+            </a>
+            <a
+              href="https://leetcode.com/u/AyushSharmaPro1832/"
+              target="_blank"
+              aria-label="LeetCode"
+              rel="noopener noreferrer"
+            >
+              <SiLeetcode className="transform transition-all hover:text-stone-600 duration-700 hover:scale-125 cursor-pointer" />
+            </a>
+            <a
+              href="https://www.instagram.com/i.yoosh.sharma/"
+              target="_blank"
+              aria-label="Instagram"
+              rel="noopener noreferrer"
+            >
+              <GrInstagram className="hover:text-[#ee2a7b] transition-all duration-700 hover:scale-125 cursor-pointer" />
+            </a>
+                    <a
+              href="https://x.com/i_yoosh_sharma"
+              target="_blank"
+              aria-label="X (formerly Twitter)"
+              rel="noopener noreferrer"
+            >
+              <RiTwitterXFill className="hover:text-black hover:bg-white transition-all duration-700 hover:scale-125 cursor-pointer" />
+            </a>
+          </div>
           <p className="text-lg text-gray-400 mb-12">
             Whether it's a question, a collaboration idea, or just a friendly hello — I'm all ears. Drop your message below and let's start a conversation!
           </p>
