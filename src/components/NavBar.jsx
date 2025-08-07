@@ -68,14 +68,14 @@ console.log(position);
           aria-label="LeetCode"
           rel="noopener noreferrer"
         >
-          <SiLeetcode className="transform transition-all hover:text-stone-600 duration-700 hover:scale-125 cursor-pointer" />
+          {/* <SiLeetcode className="transform transition-all hover:text-stone-600 duration-700 hover:scale-125 cursor-pointer" />
         </a>
         <a
           href="https://www.instagram.com/i.yoosh.sharma/"
           target="_blank"
           aria-label="Instagram"
           rel="noopener noreferrer"
-        >
+        > */}
           <GrInstagram className="hover:text-[#ee2a7b] transition-all duration-700 hover:scale-125 cursor-pointer" />
         </a>
                 <a

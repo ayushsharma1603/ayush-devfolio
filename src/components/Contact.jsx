@@ -95,14 +95,14 @@ const Contact = () => {
             >
               <FaGithub className="transform transition-all hover:text-stone-600 duration-700 hover:scale-125 cursor-pointer" />
             </a>
-            <a
+            {/* <a
               href="https://leetcode.com/u/AyushSharmaPro1832/"
               target="_blank"
               aria-label="LeetCode"
               rel="noopener noreferrer"
             >
               <SiLeetcode className="transform transition-all hover:text-stone-600 duration-700 hover:scale-125 cursor-pointer" />
-            </a>
+            </a> */}
             <a
               href="https://www.instagram.com/i.yoosh.sharma/"
               target="_blank"
