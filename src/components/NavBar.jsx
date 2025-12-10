@@ -3,7 +3,7 @@ import { SiLeetcode } from "react-icons/si";
 import { GrInstagram, GrX } from "react-icons/gr";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
-import logo from "../assets/logo.png";
+import logo from "/assets/logo.png";
 import { Link } from "react-router-dom";
 import { RiTwitterXFill } from "react-icons/ri";
 
