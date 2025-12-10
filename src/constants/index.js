@@ -1,9 +1,12 @@
-import project1 from "../assets/projects/project-1.webp";
-import project2 from "../assets/projects/project-2.webp";
-import project3 from "../assets/projects/project-3.webp";
-import project4 from "../assets/projects/project-4.webp";
+import project1 from "/assets/projects/project-1.webp";
+import project2 from "/assets/projects/project-2.webp";
+import project3 from "/assets/projects/project-3.webp";
+import project4 from "/assets/projects/project-4.webp";
 
-export const HERO_CONTENT = `A dedicated full-stack web developer passionate about building real-world, user-focused applications. With hands-on experience in the MERN stack, TailwindCSS, and MySQL, I craft full-stack solutions that are clean, efficient, and performance-driven. Currently deepening my backend and frontend expertise through practical projects, I’m focused on contributing to impactful products and growing through real-world development challenges.`;
+// export const HERO_CONTENT = `A dedicated full-stack web developer passionate about building real-world, user-focused applications. With hands-on experience in the MERN stack, TailwindCSS, and MySQL, I craft full-stack solutions that are clean, efficient, and performance-driven. Currently deepening my backend and frontend expertise through practical projects, I’m focused on contributing to impactful products and growing through real-world development challenges.`;
+export const HERO_CONTENT =`I create fast, modern, and high-converting digital experiences for brands, founders, and creators.  
+From websites to full applications, I focus on clean design, smooth user journeys, and strong results — helping you build a digital presence that stands out and performs.
+`
 
 export const ABOUT_TEXT = `Hi, I'm Ayush Sharma — a self-motivated and growth-oriented full-stack web developer with a strong foundation in Java, HTML, CSS, and JavaScript. Currently focused on advancing my skills in the MERN stack (MongoDB, Express.js, React.js, Node.js), I’m actively building real-world projects that go beyond learning — with the goal of solving problems, contributing to meaningful work, and laying the groundwork for scalable and impactful software products. I'm passionate about writing clean, maintainable code and continuously improving through hands-on development and collaboration..
 

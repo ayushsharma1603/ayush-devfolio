@@ -1,26 +1,26 @@
-import bwImage from '../assets/Ayush_photo.jpg';
-import { HERO_CONTENT } from '../constants';
-import { motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import bwImage from "/Ayush_photo.jpg";
+import { HERO_CONTENT } from "../constants";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import styles from "./Hero.module.css"
 
-const imageMouseEnter = (e)=>{
-  const target=e.target;
+const imageMouseEnter = (e) => {
+  const target = e.target;
   target.style.scale = "1.05";
   target.style.transition = "scale 0.5s ease-in-out"; // Smooth transition for scale
-}
+};
 
-const imageMouseLeave = (e)=> {
-  const target=e.target;
+const imageMouseLeave = (e) => {
+  const target = e.target;
   target.style.scale = "1"; // Reset scale on mouse leave
-  
-}
+};
 
 const containerVarints = {
   hidden: { opacity: 0, x: -100 },
   visible: {
     opacity: 1,
     x: 0,
-    ease: 'easeOut',
+    ease: "easeOut",
     transition: {
       duration: 0.5,
       staggerChildren: 0.5,
@@ -61,16 +61,17 @@ const devRoles = [
 ];
 
 const Hero = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const roleIndex = useRef(0);
   const charIndex = useRef(0);
   const isDeleting = useRef(false);
   const typingTimeout = useRef(null);
+  const [isTypingDone, setIsTypingDone] = useState(false);
 
-  const colors = ["404040", "222831","000000"];
+  const colors = ["404040", "222831", "000000"];
   const [borderColor, setBorderColor] = useState(colors[0]);
 
-    useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setBorderColor((prev) => {
         const currentIndex = colors.indexOf(prev);
@@ -123,66 +124,70 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className='p-4 lg:mb-36 mt-30 lg:mt-20'>
-      <div className='flex flex-wrap lg:flex-row-reverse'>
-        <div className='w-full lg:w-1/2'>
-          <div className='flex relative justify-center items-center rounded-full lg:p-5'>
+    <div className="p-4 lg:mb-36 mt-30 lg:mt-20">
+      <div className="flex flex-wrap lg:flex-row-reverse">
+        <div className="w-full lg:w-1/2">
+          <div className="flex relative justify-center items-center rounded-full lg:p-5">
             <motion.img
               src={bwImage}
               alt="Ayush Sharma"
               className="lg:w-10/12 rounded-full transition-shadow duration-500"
               initial={{ x: 100, opacity: 0, scale: 0.9 }}
               animate={{ x: 0, opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.05, boxShadow: `0px 0px 40px 20px #${borderColor}` }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: `0px 0px 40px 20px #${borderColor}`,
+              }}
               transition={{
-                type: 'tween',
-                ease: 'easeInOut',
+                type: "tween",
+                ease: "easeInOut",
                 duration: 0.5,
               }}
               style={{
                 boxShadow: `0px 0px 20px 10px #${borderColor}`,
-                transition: 'box-shadow 0.3s ease-in-out',
+                transition: "box-shadow 0.3s ease-in-out",
               }}
             />
-             <motion.div
-  className="absolute lg:right-30 lg:top-10 right-7 top-4 md:right-20 md:top-20 w-7 h-7 rounded-full shadow-md bg-gradient-to-b from-stone-300 via-stone-500 to-stone-700"
-  animate={{ y: [0,-17, -20, -17, 0] }}
-  transition={{
-    times: [1,0.7, 0.3, 0],
-    repeat: Infinity,
-    duration: 2,
-    ease: "easeInOut",
-  }}
-/>
-
+            <motion.div
+              className="absolute lg:right-30 lg:top-10 right-7 top-4 md:right-20 md:top-20 w-7 h-7 rounded-full shadow-md bg-gradient-to-b from-stone-300 via-stone-500 to-stone-700"
+              animate={{ y: [0, -17, -20, -17, 0] }}
+              transition={{
+                times: [1, 0.7, 0.3, 0],
+                repeat: Infinity,
+                duration: 2,
+                ease: "easeInOut",
+              }}
+            />
           </div>
         </div>
-        <div className='w-full lg:w-1/2'>
+        <div className="w-full lg:w-1/2">
           <motion.div
-            className='flex flex-col items-center lg:items-start mt-10'
-            initial='hidden'
-            animate='visible'
+            className="flex flex-col items-center lg:items-start mt-10"
+            initial="hidden"
+            animate="visible"
             variants={containerVarints}
           >
             <motion.h2
               variants={childVariants}
-              className='text-4xl leading-tight pb-2 tracking-tight lg:text-7xl'
+              className="text-4xl whitespace-nowrap leading-tight pb-2 tracking-tight lg:text-7xl"
             >
               Ayush Sharma
             </motion.h2>
 
-            <motion.input
-              type='text'
-              value={inputValue}
-              readOnly
+            <motion.div
               variants={devVariant}
-              className='bg-gradient-to-r text-left from-stone-300 to-stone-700 bg-clip-text text-transparent 
-                        lg:text-4xl text-3xl tracking-wide border-r-2 border-cyan-100 animate-blink 
-                        min-w-0 focus:outline-0 pr-1 py-3 my-3 field-sizing-content'
-            />
+              className="flex items-center lg:text-4xl text-3xl tracking-wide py-3 my-3"
+            >
+              <span className="bg-gradient-to-r from-stone-300 to-stone-700 bg-clip-text text-transparent">
+                {inputValue}
+              </span>
+
+              {/* blinking cursor */}
+              <span className="ml-1 border-r-2 w-[2px] h-[60px] !border-r-cyan-100 animate-blink"></span>
+            </motion.div>
 
             <motion.p
-              className='mb-2 py-6 text-xl max-w-lg leading-relaxed tracking-tight'
+              className="mb-2 py-6 text-xl max-w-lg leading-relaxed tracking-tight"
               variants={childVariants}
             >
               {HERO_CONTENT}
@@ -191,9 +196,9 @@ const Hero = () => {
               variants={childVariants}
               whileHover={{ scale: 1.05, opacity: 0.9 }}
               whileTap={{ scale: 0.95 }}
-              href='/Ayush_Resume.pdf'
+              href="/Ayush_Resume.pdf"
               download
-              className='bg-stone-300 rounded-full px-6 py-3 font-bold text-stone-800'
+              className="bg-stone-300 rounded-full px-6 py-3 font-bold text-stone-800"
             >
               Download Resume
             </motion.a>

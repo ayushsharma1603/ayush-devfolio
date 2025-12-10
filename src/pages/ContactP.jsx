@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Contact from "../components/Contact";
 import CursorFollower from "../components/Cursor";
-import logo from "../assets/logo.png";
+import logo from "/assets/logo.png";
 import { Link } from "react-router-dom";
 
 const ContactP = () => {

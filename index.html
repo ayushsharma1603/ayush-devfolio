@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,60 +8,68 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      document.addEventListener('keydown', function (e) {
+
+    <!-- <script>
+      document.addEventListener("keydown", function (e) {
         // Block F12
-        if (e.key === 'F12') {
+        if (e.key === "F12") {
           e.preventDefault();
         }
 
         // Block Ctrl+Shift+I, J, C
-        if (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) {
+        if (
+          e.ctrlKey &&
+          e.shiftKey &&
+          ["I", "J", "C"].includes(e.key.toUpperCase())
+        ) {
           e.preventDefault();
         }
 
         // Block Ctrl+U (view source)
-        if (e.ctrlKey && e.key.toUpperCase() === 'U') {
+        if (e.ctrlKey && e.key.toUpperCase() === "U") {
           e.preventDefault();
         }
 
         // Block Ctrl+S (save page)
-        if (e.ctrlKey && e.key.toUpperCase() === 'S') {
+        if (e.ctrlKey && e.key.toUpperCase() === "S") {
           e.preventDefault();
         }
 
         // Block Ctrl+P (print)
-        if (e.ctrlKey && e.key.toUpperCase() === 'P') {
+        if (e.ctrlKey && e.key.toUpperCase() === "P") {
           e.preventDefault();
         }
 
         // Block Ctrl+Shift+K (Firefox dev tools console)
-        if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() === 'K') {
+        if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() === "K") {
           e.preventDefault();
         }
 
         // Block Ctrl+Shift+M (responsive design mode in Firefox)
-        if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() === 'M') {
+        if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() === "M") {
           e.preventDefault();
         }
 
         // Block Cmd+Option+I/J/C on Mac (dev tools shortcuts)
-        if ((e.metaKey && e.altKey && ['I', 'J', 'C'].includes(e.key.toUpperCase()))) {
+        if (
+          e.metaKey &&
+          e.altKey &&
+          ["I", "J", "C"].includes(e.key.toUpperCase())
+        ) {
           e.preventDefault();
         }
 
         // Block Ctrl+F (Find) or Cmd+F
-        if ((e.ctrlKey || e.metaKey) && e.key.toUpperCase() === 'F') {
+        if ((e.ctrlKey || e.metaKey) && e.key.toUpperCase() === "F") {
           e.preventDefault();
         }
       });
 
       // Disable right-click
-      document.addEventListener('contextmenu', function (e) {
+      document.addEventListener("contextmenu", function (e) {
         e.preventDefault();
       });
-    </script>
-
+    </script> -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
