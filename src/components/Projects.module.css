@@ -1,0 +1,11 @@
+.mobileCarousel {
+  display: none;
+}
+@media (max-width: 428px) {
+  .desktopCarousel {
+    display: none;
+  }
+  .mobileCarousel {
+    display: flex;
+  }
+}

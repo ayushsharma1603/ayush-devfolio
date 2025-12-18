@@ -125,15 +125,33 @@ const icons = [
   },
 ];
 
+
 const Technologies = () => {
   return (
-    <div className="h-auto pb-24 mb-0">
+    <div className="h-auto  md:pb-24 mb-0">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="lg:py-20 text-4xl font-bold mt-20 lg:mt-0 mb-8 text-center lg:text-5xl uppercase tracking-wide"
+        className="
+    text-3xl
+    sm:text-3xl
+    md:text-4xl
+    lg:text-5xl
+    font-bold
+    uppercase
+    tracking-wide
+    text-center
+    px-4
+    py-2
+    mt-3
+    md:mt-16
+    sm:mt-20
+    lg:mt-0
+    mb-8
+    lg:py-20
+  "
       >
         Technologies
       </motion.h2>
