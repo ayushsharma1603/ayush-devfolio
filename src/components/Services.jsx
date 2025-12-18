@@ -29,9 +29,22 @@ const cardVariants = {
 
 const ServicesSection = () => {
   return (
-    <div className="lg:h-full h-auto py-12">
+    <div className="lg:h-full h-auto py-5 md:py-12">
       <motion.h2
-        className="text-4xl font-bold lg:text-5xl m-4 lg:mb-8 py-2 text-center uppercase"
+        className="
+    text-3xl
+    sm:text-3xl
+    md:text-4xl
+    lg:text-5xl
+    font-bold
+    uppercase
+    text-center
+    px-4
+    py-2
+    my-4
+    sm:my-6
+    lg:mb-8
+  "
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}

@@ -2,7 +2,7 @@ import bwImage from "/Ayush_photo.jpg";
 import { HERO_CONTENT } from "../constants";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import styles from "./Hero.module.css"
+import styles from "./Hero.module.css";
 
 const imageMouseEnter = (e) => {
   const target = e.target;
@@ -125,8 +125,8 @@ const Hero = () => {
 
   return (
     <div className="p-4 lg:mb-36 mt-30 lg:mt-20">
-      <div className="flex flex-wrap lg:flex-row-reverse">
-        <div className="w-full lg:w-1/2">
+      <div className="flex flex-wrap justify-center lg:flex-row-reverse">
+        <div className="w-full mt-[89px] lg:flex lg:justify-center max-w-[400px] lg:max-w-max lg:mt-[0px] lg:w-1/2">
           <div className="flex relative justify-center items-center rounded-full lg:p-5">
             <motion.img
               src={bwImage}
@@ -149,7 +149,7 @@ const Hero = () => {
               }}
             />
             <motion.div
-              className="absolute lg:right-30 lg:top-10 right-7 top-4 md:right-20 md:top-20 w-7 h-7 rounded-full shadow-md bg-gradient-to-b from-stone-300 via-stone-500 to-stone-700"
+              className={`absolute lg:right-30 lg:top-24 right-7 top-4 md:right-20 md:top-20 w-7 h-7 rounded-full shadow-md bg-gradient-to-b from-stone-300 via-stone-500 to-stone-700 ${styles.gradientCircle}`}
               animate={{ y: [0, -17, -20, -17, 0] }}
               transition={{
                 times: [1, 0.7, 0.3, 0],
@@ -176,18 +176,18 @@ const Hero = () => {
 
             <motion.div
               variants={devVariant}
-              className="flex items-center lg:text-4xl text-3xl tracking-wide py-3 my-3"
+              className="flex items-center min-w-[1px] min-h-[32px] lg:text-4xl md:text-3xl text-[20px] tracking-wide lg:py-3 lg:my-3"
             >
-              <span className="bg-gradient-to-r from-stone-300 to-stone-700 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r  from-stone-300 to-stone-700 bg-clip-text text-transparent">
                 {inputValue}
               </span>
 
               {/* blinking cursor */}
-              <span className="ml-1 border-r-2 w-[2px] h-[60px] !border-r-cyan-100 animate-blink"></span>
+              <span className="ml-1 border-r-2 w-[2px] h-[28px] md:h-[60px] !border-r-cyan-100 animate-blink"></span>
             </motion.div>
 
             <motion.p
-              className="mb-2 py-6 text-xl max-w-lg leading-relaxed tracking-tight"
+              className="md:mb-2 md:py-6  mb-0 text-center pb-4 lg:text-left py-2 md:text-xl text-[16px] max-w-lg leading-[20px] md:leading-relaxed tracking-tight"
               variants={childVariants}
             >
               {HERO_CONTENT}
