@@ -77,7 +77,7 @@ function Projects() {
     sm:mt-20
     lg:mt-0
     mb-8
-    lg:py-20
+    lg:py-10
   "
       >
         Projects
