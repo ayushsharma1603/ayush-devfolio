@@ -20,6 +20,23 @@ export const ABOUT_TEXT = `Hi, I'm Ayush Sharma — a self-motivated and growth-
 I enjoy turning ideas into functional and responsive web applications, and I'm actively exploring backend development, clean UI design, and problem-solving through DSA. I'm seeking opportunities to apply my skills, learn from real-world challenges, and grow as a software developer.`;
 
 export const EXPERIENCES = [
+    {
+    year: "Aug – Present",
+    role: "Web Developer | Production Web Apps",
+    company: "Webninjaz Pvt. Ltd.",
+    description: `Worked on production-ready client websites, admin panels, and user-facing applications. Built pixel-perfect dashboards from Figma designs with protected routing and middleware-based authentication. Implemented API-driven pagination, debounced search, advanced filtering, and optimized UI performance. Delivered responsive, scalable interfaces used actively by client teams.`,
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "MUI",
+      "shadcn/ui",
+      "Framer Motion",
+      "TanStack Query",
+      "Postman",
+    ],
+  },
+  ,
   {
     year: "Jul 2025 – Present",
     role: "Full Stack Developer | Real-Time Systems",
@@ -69,24 +86,7 @@ export const PROJECTS = [
     link: "https://nexcall-video-calling.onrender.com/",
     target: "_blank",
   },
-  {
-    title: "React Portfolio Website",
-    image: portfolio,
-    description:
-      "My personal portfolio built with React, TailwindCSS, and Framer Motion, showcasing my projects, skills, and contact details. It features a responsive layout, smooth animations, custom cursor effects, and an integrated EmailJS-powered contact form. Designed with performance, interactivity, and clean UI in mind.",
-    technologies: ["React", "Tailwind CSS", "HTML", "CSS"],
-    link: "https://ayush-devfolio.vercel.app/",
-    target: "_blank",
-  },
-  {
-    title: "Weather App",
-    image: weather,
-    description:
-      "A real-time weather application that fetches and displays temperature, humidity, and conditions using OpenWeatherMap API. Deployed with Vercel and Render",
-    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express"],
-    link: "https://weather-app-eight-lovat.vercel.app/",
-    target: "_blank",
-  },
+ 
   // {
   //   title: "To-Do List Web App",
   //   image: project1,
@@ -97,31 +97,6 @@ export const PROJECTS = [
   //   target: "_blank",
   // },
 
-  {
-    title: "Tic-Tac-Toe Game",
-    image: tictactoe,
-    description:
-      "A minimalist two-player Tic-Tac-Toe game developed using vanilla JavaScript, featuring robust win and draw logic. Built as a frontend-focused hobby project to practice core JS concepts.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://ayushsharma1603.github.io/Tic-Tac-Toe/",
-    target: "_blank",
-  },
-  {
-    title: "GGS Forex – Client Website",
-    image: ggsAdmin, // add image later
-    description:
-      "A secure and fully responsive forex exchange client website built for GGS Forex. Developed using Next.js and shadcn/ui with a modern, scalable UI architecture. Includes role-based access control (RBAC), GraphQL-based data handling, and an advanced admin panel for managing users and exchange operations. Designed with performance, security, and scalability in mind.",
-    technologies: [
-      "Next.js",
-      "shadcn/ui",
-      "REST API",
-      "RBAC",
-      "JavaScript",
-      "AWS",
-    ],
-    link: "https://forex-9ww1.vercel.app", // add link later
-    target: "_blank",
-  },
   {
     title: "HMS – Hostel Management System",
     image: hms, // add image later
@@ -141,38 +116,22 @@ export const PROJECTS = [
     target: "_blank",
   },
   {
-    title: "CRM Tool",
-    image: crm, // add image later
+    title: "GGS Forex – Client Website",
+    image: ggsAdmin, // add image later
     description:
-      "A comprehensive CRM tool built with Next.js to manage leads, vendors, products, and meetings in a single unified platform. Features include role-based access control, secure JWT authentication, dynamic workflows, and scalable API integrations. Designed for enterprise-level usage with a clean UI, modular architecture, and high performance.",
+      "A secure and fully responsive forex exchange client website built for GGS Forex. Developed using Next.js and shadcn/ui with a modern, scalable UI architecture. Includes role-based access control (RBAC), data handling, and an advanced admin panel for managing users and exchange operations. Designed with performance, security, and scalability in mind.",
     technologies: [
       "Next.js",
-      "React",
+      "shadcn/ui",
+      "REST API",
       "RBAC",
-      "JWT Authentication",
-      "REST APIs",
-      "AWS",
-    ],
-    link: "", // add link later
-    target: "_blank",
-    comingSoon: true,
-  },
-  {
-    title: "GGS Forex – User Frontend",
-    image: ggsUser, // add image later
-    description:
-      "A user-facing forex trading frontend for GGS Forex, built with Next.js and focused on performance, security, and responsiveness. Implements secure JWT-based authentication, seamless API integrations, and a modern UI optimized for real-world trading workflows. Fully responsive and production-ready, deployed on AWS.",
-    technologies: [
-      "Next.js",
       "JavaScript",
-      "JWT Authentication",
-      "REST APIs",
       "AWS",
     ],
-    link: "https://ggs-forex.vercel.app/", // add link later
+    link: "https://admin.ggsforex.com/", // add link later
     target: "_blank",
   },
-  {
+{
     title: "Target Tours – Travel Registration Platform",
     image: targetTours, // add image later
     description:
@@ -188,8 +147,67 @@ export const PROJECTS = [
     ],
     link: "", // add link later
     target: "_blank",
-    comingSoon: true,
+    comingSoon: false,
   },
+  {
+    title: "CRM Tool",
+    image: crm, // add image later
+    description:
+      "A comprehensive CRM tool built with Next.js to manage leads, vendors, products, and meetings in a single unified platform. Features include role-based access control, secure JWT authentication, dynamic workflows, and scalable API integrations. Designed for enterprise-level usage with a clean UI, modular architecture, and high performance.",
+    technologies: [
+      "Next.js",
+      "React",
+      "RBAC",
+      "JWT Authentication",
+      "REST APIs",
+      "AWS",
+    ],
+    link: "", // add link later
+    target: "_blank",
+    comingSoon: false,
+  },
+  {
+    title: "GGS Forex – User Frontend",
+    image: ggsUser, // add image later
+    description:
+      "A user-facing forex trading frontend for GGS Forex, built with Next.js and focused on performance, security, and responsiveness. Implements secure JWT-based authentication, seamless API integrations, and a modern UI optimized for real-world trading workflows. Fully responsive and production-ready, deployed on AWS.",
+    technologies: [
+      "Next.js",
+      "JavaScript",
+      "JWT Authentication",
+      "REST APIs",
+      "AWS",
+    ],
+    link: "https://www.ggsforex.com/ ", // add link later
+    target: "_blank",
+  },
+   {
+    title: "React Portfolio Website",
+    image: portfolio,
+    description:
+      "My personal portfolio built with React, TailwindCSS, and Framer Motion, showcasing my projects, skills, and contact details. It features a responsive layout, smooth animations, custom cursor effects, and an integrated EmailJS-powered contact form. Designed with performance, interactivity, and clean UI in mind.",
+    technologies: ["React", "Tailwind CSS", "HTML", "CSS"],
+    link: "https://ayush-devfolio.vercel.app/",
+    target: "_blank",
+  },
+  {
+    title: "Weather App",
+    image: weather,
+    description:
+      "A real-time weather application that fetches and displays temperature, humidity, and conditions using OpenWeatherMap API. Deployed with Vercel and Render",
+    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express"],
+    link: "https://weather-app-eight-lovat.vercel.app/",
+    target: "_blank",
+  },
+  {
+    title: "Tic-Tac-Toe Game",
+    image: tictactoe,
+    description:
+      "A minimalist two-player Tic-Tac-Toe game developed using vanilla JavaScript, featuring robust win and draw logic. Built as a frontend-focused hobby project to practice core JS concepts.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://ayushsharma1603.github.io/Tic-Tac-Toe/",
+    target: "_blank",
+  }, 
 ];
 
 export const CONTACT = {

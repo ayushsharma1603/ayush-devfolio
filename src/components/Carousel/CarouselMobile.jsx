@@ -146,7 +146,7 @@ const CarouselMobile = ({ slideData = [] }) => {
               style={slideStyle}
               onClick={() => handleSlideChange(slideNumber)}
             >
-              <div className={styles.slideContent}>
+               <a href={slide.link} target={slide.target}>   <div className={styles.slideContent}>
                 {/* Image Container */}
                 <div className={styles.imageContainer}>
                   <img
@@ -233,6 +233,8 @@ const CarouselMobile = ({ slideData = [] }) => {
                   </div>
                 )}
               </div>
+              </a>
+           
             </div>
           );
         })}
