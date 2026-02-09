@@ -5,10 +5,9 @@ import targetTours from "/assets/projects/targetTours.webp";
 import crm from "/assets/projects/crm.webp";
 
 import portfolio from "/assets/projects/portfolio.webp";
-import weather from "/assets/projects/weatherapp.webp"
-import tictactoe from "/assets/projects/tictactoe.webp"
-import nexcall from "/assets/projects/nexcall.webp"
-
+import weather from "/assets/projects/weatherapp.webp";
+import tictactoe from "/assets/projects/tictactoe.webp";
+import nexcall from "/assets/projects/nexcall.webp";
 
 // export const HERO_CONTENT = `A dedicated full-stack web developer passionate about building real-world, user-focused applications. With hands-on experience in the MERN stack, TailwindCSS, and MySQL, I craft full-stack solutions that are clean, efficient, and performance-driven. Currently deepening my backend and frontend expertise through practical projects, I’m focused on contributing to impactful products and growing through real-world development challenges.`;
 export const HERO_CONTENT = `I create fast, modern, and high-converting digital experiences for brands, founders, and creators.  
@@ -20,7 +19,7 @@ export const ABOUT_TEXT = `Hi, I'm Ayush Sharma — a self-motivated and growth-
 I enjoy turning ideas into functional and responsive web applications, and I'm actively exploring backend development, clean UI design, and problem-solving through DSA. I'm seeking opportunities to apply my skills, learn from real-world challenges, and grow as a software developer.`;
 
 export const EXPERIENCES = [
-    {
+  {
     year: "Aug – Present",
     role: "Web Developer | Production Web Apps",
     company: "Webninjaz Pvt. Ltd.",
@@ -86,7 +85,7 @@ export const PROJECTS = [
     link: "https://nexcall-video-calling.onrender.com/",
     target: "_blank",
   },
- 
+
   // {
   //   title: "To-Do List Web App",
   //   image: project1,
@@ -131,41 +130,41 @@ export const PROJECTS = [
     link: "https://admin.ggsforex.com/", // add link later
     target: "_blank",
   },
-{
-    title: "Target Tours – Travel Registration Platform",
-    image: targetTours, // add image later
-    description:
-      "A modern travel registration and booking platform built for Target Tours with a strong focus on user experience and performance. The application includes responsive travel listings, advanced filters, registration flows, and dynamic UI components. Built using a scalable frontend architecture with secure authentication and optimized for production deployment on AWS.",
-    technologies: [
-      "React",
-      "Next.js",
-      "JavaScript",
-      "Responsive UI",
-      "JWT Authentication",
-      "REST APIs",
-      "AWS",
-    ],
-    link: "", // add link later
-    target: "_blank",
-    comingSoon: false,
-  },
-  {
-    title: "CRM Tool",
-    image: crm, // add image later
-    description:
-      "A comprehensive CRM tool built with Next.js to manage leads, vendors, products, and meetings in a single unified platform. Features include role-based access control, secure JWT authentication, dynamic workflows, and scalable API integrations. Designed for enterprise-level usage with a clean UI, modular architecture, and high performance.",
-    technologies: [
-      "Next.js",
-      "React",
-      "RBAC",
-      "JWT Authentication",
-      "REST APIs",
-      "AWS",
-    ],
-    link: "", // add link later
-    target: "_blank",
-    comingSoon: false,
-  },
+  // {
+  //   title: "Target Tours – Travel Registration Platform",
+  //   image: targetTours, // add image later
+  //   description:
+  //     "A modern travel registration and booking platform built for Target Tours with a strong focus on user experience and performance. The application includes responsive travel listings, advanced filters, registration flows, and dynamic UI components. Built using a scalable frontend architecture with secure authentication and optimized for production deployment on AWS.",
+  //   technologies: [
+  //     "React",
+  //     "Next.js",
+  //     "JavaScript",
+  //     "Responsive UI",
+  //     "JWT Authentication",
+  //     "REST APIs",
+  //     "AWS",
+  //   ],
+  //   link: "", // add link later
+  //   target: "_blank",
+  //   comingSoon: false,
+  // },
+  // {
+  //   title: "CRM Tool",
+  //   image: crm, // add image later
+  //   description:
+  //     "A comprehensive CRM tool built with Next.js to manage leads, vendors, products, and meetings in a single unified platform. Features include role-based access control, secure JWT authentication, dynamic workflows, and scalable API integrations. Designed for enterprise-level usage with a clean UI, modular architecture, and high performance.",
+  //   technologies: [
+  //     "Next.js",
+  //     "React",
+  //     "RBAC",
+  //     "JWT Authentication",
+  //     "REST APIs",
+  //     "AWS",
+  //   ],
+  //   link: "", // add link later
+  //   target: "_blank",
+  //   comingSoon: false,
+  // },
   {
     title: "GGS Forex – User Frontend",
     image: ggsUser, // add image later
@@ -181,33 +180,15 @@ export const PROJECTS = [
     link: "https://www.ggsforex.com/ ", // add link later
     target: "_blank",
   },
-   {
-    title: "React Portfolio Website",
-    image: portfolio,
-    description:
-      "My personal portfolio built with React, TailwindCSS, and Framer Motion, showcasing my projects, skills, and contact details. It features a responsive layout, smooth animations, custom cursor effects, and an integrated EmailJS-powered contact form. Designed with performance, interactivity, and clean UI in mind.",
-    technologies: ["React", "Tailwind CSS", "HTML", "CSS"],
-    link: "https://ayush-devfolio.vercel.app/",
-    target: "_blank",
-  },
-  {
-    title: "Weather App",
-    image: weather,
-    description:
-      "A real-time weather application that fetches and displays temperature, humidity, and conditions using OpenWeatherMap API. Deployed with Vercel and Render",
-    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express"],
-    link: "https://weather-app-eight-lovat.vercel.app/",
-    target: "_blank",
-  },
-  {
-    title: "Tic-Tac-Toe Game",
-    image: tictactoe,
-    description:
-      "A minimalist two-player Tic-Tac-Toe game developed using vanilla JavaScript, featuring robust win and draw logic. Built as a frontend-focused hobby project to practice core JS concepts.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://ayushsharma1603.github.io/Tic-Tac-Toe/",
-    target: "_blank",
-  }, 
+  // {
+  //   title: "React Portfolio Website",
+  //   image: portfolio,
+  //   description:
+  //     "My personal portfolio built with React, TailwindCSS, and Framer Motion, showcasing my projects, skills, and contact details. It features a responsive layout, smooth animations, custom cursor effects, and an integrated EmailJS-powered contact form. Designed with performance, interactivity, and clean UI in mind.",
+  //   technologies: ["React", "Tailwind CSS", "HTML", "CSS"],
+  //   link: "https://ayush-devfolio.vercel.app/",
+  //   target: "_blank",
+  // },
 ];
 
 export const CONTACT = {
